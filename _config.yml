@@ -1,0 +1,87 @@
+# Site settings
+title: ANT-FHE
+email: xiaolinjie.xlj@antgroup.com
+description: >
+  Privacy Computing Accelerators and AI Distributed Systems 
+lang: en-US
+
+baseurl: "/ant-fhe" # the subpath of your site, e.g. /blog/
+url: https://shaw1025/ant-fhe # the base hostname & protocol for your site
+git_address: https://github.com/shaw1025/ant-fhe
+git_edit_address: https://github.com/shaw1025/ant-fhe/docs
+
+# theme options from https://bootswatch.com/3/
+# comment out this to use default Bootstrap
+bootwatch: paper # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+  - vendor
+
+timezone: Asia/Shanghai
+defaults:
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+- scope:
+    path: _events
+    type: posts
+  values:
+    layout: post
+    sectionid: events
+
+- scope:
+    path: _pubs
+    type: posts
+  values:
+    layout: post
+    sectionid: pubs
+
+# - scope:
+#     path: _posts
+#     type: posts
+#   values:
+#     layout: post
+#     sectionid: posts
+
+- scope:
+    path: _tools
+    type: posts
+  values:
+    layout: post
+    sectionid: tools
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  events:
+    permalink: /:collection/:path/
+    output: true
+  pubs:
+    permalink: /pubs/:year/:month/:day/:title/
+    output: true
+  posts:
+    permalink: /posts/:year/:month/:day/:title/
+    output: true
